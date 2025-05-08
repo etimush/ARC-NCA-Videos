@@ -2,6 +2,7 @@ import os
 import sys  # To exit script on error
 
 # --- Configuration ---
+RAW_BASE = "https://raw.githubusercontent.com/etimush/ARC-NCA-Videos/main/docs/"
 VIDEO_DIR = "Videos"
 OUTPUT_HTML_FILE = "index.html"
 CSS_FILE = "style.css"
@@ -168,7 +169,7 @@ else:
             video_items_html += f"""
                 <div class="video-item">
                     <video id="{video_id}" class="lazy-video" controls loop muted playsinline preload="metadata">
-                        <source data-src="{video_path_relative}" type="{mime_type}">
+                        <source data-src="{RAW_BASE + video_path_relative}" type="{mime_type}">
                         Your browser does not support the video tag. ({filename})
                     </video>
                     <p class="caption">{base_name}</p>
